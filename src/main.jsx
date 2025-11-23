@@ -12,62 +12,50 @@ import ToyDetails from './Pages/ToyDetails'
 import MyProfile from './Pages/MyProfile'
 import ExtraPrivatePage from './Pages/ExtraPrivatePage'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import AuthProvider from './Providers/AuthProvider'
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/",
-      element: <Root></Root>, // this will be my layout (Navbar + Outlet + Footer)
-      errorElement: <NotFound></NotFound>,
-      children:[
-        {
-          index: true,
-          element: <Home></Home>
-        },
-        {
-          path: "login",
-          element: <Login></Login>
-        },
-        {
-          path: "register",
-          element: <Register></Register>
-        },
-        {
-          path: "forget-password",
-          element: <ForgetPassword></ForgetPassword>
-        },
-        {
-          path: "toy/:id",
-          element: (
-            <PrivateRoute>
-              <ToyDetails>
-              </ToyDetails>
-            </PrivateRoute>
-          ),
-        },
-        {
-          path: "my-profile",
-          element: (
-            <PrivateRoute>
-              <MyProfile></MyProfile>
-            </PrivateRoute>
-          ),
-        },
-        {
-          path:"extra",
-          element: (
-            <PrivateRoute>
-              <ExtraPrivatePage></ExtraPrivatePage>
-            </PrivateRoute>
-          )
-        }
-      ]
-    }
-  ]
-)
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <NotFound />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
+      { path: "forget-password", element: <ForgetPassword /> },
+      {
+        path: "toy/:id",
+        element: (
+          <PrivateRoute>
+            <ToyDetails />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "my-profile",
+        element: (
+          <PrivateRoute>
+            <MyProfile />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "extra",
+        element: (
+          <PrivateRoute>
+            <ExtraPrivatePage />
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
+]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
-)
+);
