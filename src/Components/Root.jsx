@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Footer from "./Footer";
 import Navbar from "./Navbar";
 import { Toaster } from "react-hot-toast";
+import Footer from "./Footer";
 
 const Root = () => {
     return (
@@ -10,7 +10,7 @@ const Root = () => {
             <main className="flex-1 max-w-6xl mx-auto w-full px-4 py-6">
                 <Outlet />
             </main>
-            <Footer />
+            <Footer></Footer>
             <Toaster position="top-center"></Toaster>
         </div>
     );
