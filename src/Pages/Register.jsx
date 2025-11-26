@@ -1,9 +1,14 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Register = () => {
+
+    useEffect(() => {
+                document.title = "ToyTopia | Register";
+              }, []);
     const { registerUser, googleLogin, updateUserProfile } = useContext(AuthContext);
 
     const [showPassword, setShowPassword] = useState(false);
@@ -147,7 +152,7 @@ const Register = () => {
                                         className="absolute inset-y-0 right-3 flex items-center text-sm text-gray-500"
                                         onClick={() => setShowPassword((prev) => !prev)}
                                     >
-                                        {showPassword ? "Hide" : "Show"}
+                                        {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
                                     </button>
                                 </div>
 

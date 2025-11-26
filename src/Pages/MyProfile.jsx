@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 import toast from 'react-hot-toast';
 
@@ -8,6 +8,10 @@ const MyProfile = () => {
 
     const [name, setName] = useState(user?.displayName || "");
     const [photoURL, setPhotoURL] = useState(user?.photoURL || "");
+
+    useEffect(() => {
+            document.title = "ToyTopia | My Profile";
+          }, []);
 
     const handleUpdate = (e) => {
         e.preventDefault();

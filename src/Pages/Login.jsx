@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
@@ -7,10 +7,15 @@ const Login = () => {
     const { loginUser, googleLogin } = useContext(AuthContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.form?.pathname || "/";
+
+    useEffect(() => {
+        document.title = "ToyTopia | Login";
+      }, []);
 
     const handleLogin = (e) => {
         e.preventDefault();

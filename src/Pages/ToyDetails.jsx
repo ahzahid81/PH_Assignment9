@@ -22,6 +22,9 @@ const ToyDetails = () => {
                 const foundToy = data.find((item) => String(item.toyId) === String(id));
 
                 setToy(foundToy || null);
+
+                
+                document.title = `ToyTopia | Toy Details`;
             } catch (error) {
                 console.error("Error loading toy data", error)
             } finally {
@@ -31,6 +34,8 @@ const ToyDetails = () => {
 
         fecthToy();
     }, [id])
+
+    
 
 
     const handleTryNow = (e) => {
