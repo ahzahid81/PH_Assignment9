@@ -94,11 +94,10 @@ This project is built as part of **Assignment 09** following all requirements, i
 
 ---
 
-## 📦 NPM Packages Used (Required for Assignment)
+## 📦 NPM Packages Used
 
 - `swiper`
 - `react-hot-toast`
-- `aos` / OR any package you used for animation
 - `firebase`
 - `react-router-dom`
 
@@ -108,5 +107,5 @@ This project is built as part of **Assignment 09** following all requirements, i
 
 ## 🔧 Environment Variables (Firebase)
 
-Create a `.env` file in the root:
+`.env` file in the root
 
