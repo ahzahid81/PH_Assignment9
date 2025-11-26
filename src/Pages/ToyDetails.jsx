@@ -15,7 +15,7 @@ const ToyDetails = () => {
     useEffect(() => {
         const fecthToy = async () => {
             try {
-                const res = await fetch("/toy.json");
+                const res = await fetch("/toys.json");
                 const data = await res.json();
 
 
@@ -164,11 +164,6 @@ const ToyDetails = () => {
                                 </button>
                             </div>
                         </form>
-
-                        <p className="text-xs text-gray-500 mt-3">
-                            This form is for demonstration only. Your data is not stored in any
-                            database.
-                        </p>
                     </div>
                 </div>
             </div>
