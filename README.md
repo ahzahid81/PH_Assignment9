@@ -8,10 +8,10 @@ This project is built as part of **Assignment 09** following all requirements, i
 ---
 
 ## 🔗 Live Website  
-👉 **Live URL:**   
+👉 **Live URL:**   https://assignment9ph.netlify.app/
 
 ## 📦 GitHub Repository  
-👉 **Repository Link:** 
+👉 **Repository Link:** https://github.com/ahzahid81/PH_Assignment9
 
 ---
 
@@ -100,10 +100,6 @@ This project is built as part of **Assignment 09** following all requirements, i
 - `react-hot-toast`
 - `firebase`
 - `react-router-dom`
-
-(Add or remove based on what you actually installed.)
-
----
 
 ## 🔧 Environment Variables (Firebase)
 

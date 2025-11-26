@@ -4,18 +4,7 @@ import { AuthContext } from "../Providers/AuthProvider";
 const ExtraPrivatePage = () => {
   const { user } = useContext(AuthContext);
 
-  const [wishlist, setWishlist] = useState([
-    {
-      id: 1,
-      toyName: "Lego Classic Bricks",
-      note: "Perfect for creative building time on weekends.",
-    },
-    {
-      id: 2,
-      toyName: "Wooden Train Set",
-      note: "Great for my kid's train obsession.",
-    },
-  ]);
+  const [wishlist, setWishlist] = useState([]);
 
   const [toyName, setToyName] = useState("");
   const [note, setNote] = useState("");
@@ -154,11 +143,6 @@ const ExtraPrivatePage = () => {
                 </div>
               )}
 
-              <p className="text-[11px] text-gray-400 mt-3">
-                Note: This wishlist is not saved to any server or database. It
-                resets if you reload the page. It is included to fulfill the
-                extra private route requirement with meaningful content.
-              </p>
             </div>
           </div>
         </div>
